@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title%></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="javascripts/editor.js"></script>
+    <style>
+        .edit-div {
+            width: 300px;
+            height: 80px;
+            border: 2px dashed yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div contenteditable="true" id="test" class="edit-div"></div>
+    <button id="btnEmoji">emoji</button>
+
+    <script>
+        let editor = new Editor('test');
+        editor.init();
+        btnEmoji.onclick = ()=>{
+            editor.handleEmoji('<img src="images/emoji/001.png">')
+        }
+    </script>
+</body>
+</html>
